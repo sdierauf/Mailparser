@@ -19,6 +19,7 @@ public class LinearMailManager implements MailManager {
 
   @Override
   public void addMailData(MailInfo data) {
+//    System.out.println("merging data... ");
     for (String email : data.recipients) {
       if (this.curMap.containsKey(email)) {
         this.curMap.get(email).putAll(data.counts);
@@ -30,6 +31,7 @@ public class LinearMailManager implements MailManager {
 
   @Override
   public Map<Integer, List<String>> searchTopWords(String email) {
+    System.out.println("grabbing top words");
     if (!this.curMap.containsKey(email)) {
       return null;
     } else {

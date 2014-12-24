@@ -20,4 +20,6 @@ public interface MailFinderQueue {
    */
   public void buildQueueOnPath(String path);
 
+  public boolean isEmpty();
+
 }
