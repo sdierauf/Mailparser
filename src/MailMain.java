@@ -18,7 +18,7 @@ public class MailMain {
     Set<String> dictionary = buildDictionary(dictionaryFilepath);
     int current = 1;
     while (!finderQueue.isEmpty()) {
-      System.out.println("Processing record " + current + " out of " + total);
+      System.out.println("Processing record " + current + " of " + total);
       manager.addMailData(
           LinearMailBodyParser.parseContents(
               finderQueue.getNext(), dictionary

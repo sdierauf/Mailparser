@@ -31,7 +31,6 @@ public class LinearMailManager implements MailManager {
 
   @Override
   public Map<Integer, List<String>> searchTopWords(String email) {
-    System.out.println("grabbing top words");
     if (!this.curMap.containsKey(email)) {
       return null;
     } else {
