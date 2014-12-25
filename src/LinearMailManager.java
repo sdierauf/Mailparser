@@ -53,5 +53,18 @@ public class LinearMailManager implements MailManager {
     }
   }
 
+  @Override
+  public void printTop(String email) {
+    System.out.println("\nResults for: " + email);
+    Map<Integer, List<String>> top = searchTopWords(email);
+    if (top == null) {
+      System.out.println("Email address not found :c");
+      return;
+    }
+    for (Integer key : top.keySet()) {
+      System.out.println(key + ": " + top.get(key).toString());
+    }
+  }
+
 
 }

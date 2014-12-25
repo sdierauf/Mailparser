@@ -10,6 +10,6 @@ public interface MailBodyParser {
    * @param email
    * @return
    */
-  public  MailInfo parseContents(File email);
+  public MailInfo parseContents(File email);
 
 }

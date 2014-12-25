@@ -14,20 +14,31 @@ public class MailMain {
     MailFinderQueue finderQueue = new LinearMailFinderQueue();
     MailManager manager = new LinearMailManager();
     finderQueue.buildQueueOnPath(filepath);
+    int total = finderQueue.size();
     Set<String> dictionary = buildDictionary(dictionaryFilepath);
+    int current = 1;
     while (!finderQueue.isEmpty()) {
+      System.out.println("Processing record " + current + " out of " + total);
       manager.addMailData(
           LinearMailBodyParser.parseContents(
               finderQueue.getNext(), dictionary
           )
       );
+      current++;
     }
-    Map<Integer, List<String>> top = manager.searchTopWords("susandierauf@yahoo.com");
-    for (Integer key : top.keySet()) {
-      System.out.println(key + ": " + top.get(key).toString());
-    }
-    //interactive part
 
+    //interactive part
+    String input = "";
+    Scanner in = new Scanner(System.in);
+    while (!input.equals("exit")) {
+      System.out.print("enter an email or 'exit' to quit: ");
+      input = in.nextLine();
+      if (input.equals("exit")) {
+        System.out.println("bye");
+      } else {
+        manager.printTop(input);
+      }
+    }
 
 
   }

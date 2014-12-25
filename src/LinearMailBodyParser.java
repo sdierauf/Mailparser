@@ -15,7 +15,6 @@ public class LinearMailBodyParser {
       while (bodyScanner.hasNext()) {
         String token = bodyScanner.next();
         if (isEmail(token)) {
-          System.out.println("found email: " + token);
           info.recipients.add(token);
         }
         if (dictionary.contains(token)) {

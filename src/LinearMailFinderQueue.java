@@ -64,4 +64,9 @@ public class LinearMailFinderQueue implements MailFinderQueue {
   public boolean isEmpty() {
     return this.mailQueue.isEmpty();
   }
+
+  @Override
+  public int size() {
+    return this.mailQueue.size();
+  }
 }

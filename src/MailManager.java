@@ -11,4 +11,6 @@ public interface MailManager {
   public void addMailData(MailInfo data);
 
   public Map<Integer, List<String>> searchTopWords(String email);
+
+  public void printTop(String email);
 }

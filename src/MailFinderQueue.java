@@ -22,4 +22,6 @@ public interface MailFinderQueue {
 
   public boolean isEmpty();
 
+  public int size();
+
 }
